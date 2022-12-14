@@ -5,13 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0f09559-1246-423c-b009-61d6e4d132b8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/homework/frg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/homework/day19/BookingClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/homework/day19/BookingScroll.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/homework/day19/HotelRating.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/homework/day19/HotelsAvailability.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/homework/day19/School.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/homework/day19/Spisok.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/homework/day19/Tooltip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/homework/frg.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,13 +40,101 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager" selected="JUnit.HotelRating">
+    <configuration name="BookingScroll.bir" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Valery_Mikulionak_maven_at_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="homework.day19.HotelsAvailability" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="homework.day19" />
+      <option name="MAIN_CLASS_NAME" value="homework.day19.BookingScroll" />
+      <option name="METHOD_NAME" value="bir" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HotelRating" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Valery_Mikulionak_maven_at_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="homework.day19.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="homework.day19" />
+      <option name="MAIN_CLASS_NAME" value="homework.day19.HotelRating" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HotelsAvailability" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Valery_Mikulionak_maven_at_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="homework.day19.HotelsAvailability" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="homework.day19" />
+      <option name="MAIN_CLASS_NAME" value="homework.day19.HotelsAvailability" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tooltip" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Valery_Mikulionak_maven_at_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="homework.day19.HotelsAvailability" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="homework.day19" />
+      <option name="MAIN_CLASS_NAME" value="homework.day19.Tooltip" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tooltip.checkingCurrency" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Valery_Mikulionak_maven_at_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="homework.day19.HotelsAvailability" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="homework.day19" />
+      <option name="MAIN_CLASS_NAME" value="homework.day19.Tooltip" />
+      <option name="METHOD_NAME" value="checkingCurrency" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.HotelRating" />
+        <item itemvalue="JUnit.HotelsAvailability" />
+        <item itemvalue="JUnit.BookingScroll.bir" />
+        <item itemvalue="JUnit.Tooltip" />
+        <item itemvalue="JUnit.Tooltip.checkingCurrency" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -53,6 +144,18 @@
       <option name="presentableId" value="Default" />
       <updated>1671009942369</updated>
     </task>
+    <task id="LOCAL-00001" summary="Create project">
+      <created>1671010514390</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1671010514390</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Create project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create project" />
   </component>
 </project>
