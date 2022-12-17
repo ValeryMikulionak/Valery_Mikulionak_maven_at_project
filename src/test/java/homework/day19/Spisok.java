@@ -21,16 +21,10 @@ public class Spisok {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
         driver.manage().timeouts().setScriptTimeout(20, TimeUnit.SECONDS);
-        driver.get("https://demoqa.com/select-menu");
     }
 
     public static void main(String[] args) throws InterruptedException {
 
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
-        driver.manage().timeouts().setScriptTimeout(20, TimeUnit.SECONDS);
         driver.get("https://demoqa.com/select-menu");
         Thread.sleep(1000);
         WebElement el = driver.findElement(By.id("withOptGroup"));

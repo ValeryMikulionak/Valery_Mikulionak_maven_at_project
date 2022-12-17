@@ -1,5 +1,7 @@
 package homework.day19;
 
+import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -9,11 +11,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 public class School {
 
-    private static WebDriver driver;
+    private WebDriver driver;
 
     @Before
     public void browserOpen() {
@@ -22,12 +26,12 @@ public class School {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
         driver.manage().timeouts().setScriptTimeout(20, TimeUnit.SECONDS);
-        driver.get("https://www.w3schools.com/java/");
     }
 
     @Test
     public void checkingSearchResults() throws InterruptedException {
 
+        driver.get("https://www.w3schools.com/java/");
         Actions make = new Actions(driver);
         make.doubleClick(driver.findElement(By.xpath("//div[@id='main']/h1/span")))
                 .keyDown(Keys.LEFT_CONTROL)
@@ -45,5 +49,20 @@ public class School {
         make.sendKeys(Keys.ENTER)
                 .build().perform();
 
+        List<WebElement> list = driver.findElements(By.xpath("//div[@data-header-feature='0']//h3"));
+
+        List<String> titles = list.stream()
+                .map(WebElement::getText)
+                .map(String::toLowerCase)
+                .collect(Collectors.toList());
+
+        Assert.assertTrue("Не все результаты поиска содержат введенное слово",
+                titles.stream().allMatch(i -> i.contains("tutorial")));
+    }
+
+    @After
+    public void browserClose() {
+        driver.close();
+        driver.quit();
     }
 }

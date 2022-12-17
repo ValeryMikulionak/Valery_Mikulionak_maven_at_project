@@ -26,7 +26,6 @@ public class HotelsAvailability {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
         driver.manage().timeouts().setScriptTimeout(20, TimeUnit.SECONDS);
-        driver.get("https://booking.com/");
     }
 
     @Test
@@ -41,6 +40,7 @@ public class HotelsAvailability {
         Date day2 = cal.getTime();
         String pat2 = formatDate.format(day2);
 
+        driver.get("https://booking.com/");
         WebElement el = driver.findElement(By.xpath("//input[@name='ss']"));
         el.click();
         el.sendKeys("Milano");

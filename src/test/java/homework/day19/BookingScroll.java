@@ -21,12 +21,12 @@ public class BookingScroll {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
         driver.manage().timeouts().setScriptTimeout(20, TimeUnit.SECONDS);
-        driver.get("https://booking.com/");
     }
 
     @Test
     public void ColorMatching() throws InterruptedException {
 
+        driver.get("https://booking.com/");
         WebElement el = driver.findElement(By.xpath("//input[@name='ss']"));
         el.click();
         el.sendKeys("Paris");

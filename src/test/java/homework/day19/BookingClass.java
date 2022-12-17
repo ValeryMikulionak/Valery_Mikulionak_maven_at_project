@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.text.SimpleDateFormat;
 import java.time.Duration;
@@ -30,7 +31,6 @@ public class BookingClass {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
         driver.manage().timeouts().setScriptTimeout(20, TimeUnit.SECONDS);
-        driver.get("https://booking.com/");
     }
 
     @Test
@@ -45,6 +45,7 @@ public class BookingClass {
         Date day2 = cal.getTime();
         String pat2 = formatDate.format(day2);
 
+        driver.get("https://booking.com/");
         driver.findElement(By.xpath("//*[contains(@action,'searchresults')]/div/div[2]")).click();
         driver.findElement(By.xpath("//*[@aria-label='" + pat + "']")).click();
         driver.findElement(By.xpath("//*[@aria-label='" + pat2 + "']")).click();
@@ -63,11 +64,9 @@ public class BookingClass {
         WebElement el3 = driver.findElement(By.xpath("//div[@data-filters-item='pri:pri=5']/label/span[2]"));
         el3.click();
         driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-        new FluentWait<>(driver)
-                .withTimeout(Duration.ofSeconds(30))
-                .pollingEvery(Duration.ofMillis(5))
-                .ignoring(NoSuchElementException.class)
-                .until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@data-testid='overlay-spinner']")));
+        new WebDriverWait(driver, 1000).until(
+                ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@data-testid='overlay-spinner']")));
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         String cost = driver.findElement
                         (By.xpath("//div[@data-filters-item='pri:pri=5']/label/span[3]/div/div/div"))
@@ -84,6 +83,7 @@ public class BookingClass {
                 .pollingEvery(Duration.ofMillis(5))
                 .ignoring(NoSuchElementException.class)
                 .until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@data-testid='overlay-spinner']")));
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         String att = driver.findElement
                         (By.xpath("//div[@data-testid='availability-rate-information'][1]/span/div/span[2]"))

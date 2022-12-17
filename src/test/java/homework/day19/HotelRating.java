@@ -30,7 +30,6 @@ public class HotelRating {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
         driver.manage().timeouts().setScriptTimeout(20, TimeUnit.SECONDS);
-        driver.get("https://booking.com/");
     }
 
     @Test
@@ -46,6 +45,7 @@ public class HotelRating {
         String pat2 = formatDate.format(day2);
 
 //        String mainTab = driver.getWindowHandle();
+        driver.get("https://booking.com/");
         WebElement el = driver.findElement(By.xpath("//input[@name='ss']"));
         el.click();
         el.sendKeys("Izmir");
@@ -67,6 +67,7 @@ public class HotelRating {
                     .pollingEvery(Duration.ofMillis(5))
                     .ignoring(NoSuchElementException.class)
                     .until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@data-testid='overlay-spinner']")));
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
             driver.findElement(By.xpath("//div[@data-testid='property-card'][1]/div/div[1]")).click();
             driver.navigate().forward();
