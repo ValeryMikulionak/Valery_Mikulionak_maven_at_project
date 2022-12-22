@@ -32,6 +32,7 @@ public class Tooltip {
         WebElement cur = driver.findElement(By.xpath("//div[@class='bui-group__item'][1]/button"));
         Actions act = new Actions(driver);
         act.moveToElement(cur);
+        act.build();
         act.perform();
         String str = cur.getAttribute("data-tooltip-text");
         Assert.assertEquals("Текст подсказки для валюты неверный", "Choose your currency", "" + str + "");
@@ -39,6 +40,7 @@ public class Tooltip {
         WebElement lang = driver.findElement(By.xpath("//div[@class='bui-group__item'][2]/button"));
         Actions actions = new Actions(driver);
         actions.moveToElement(lang);
+        act.build();
         actions.perform();
         String str1 = lang.getAttribute("data-tooltip-text");
         Assert.assertEquals("Текст подсказки для языка неверный", "Choose your language", "" + str1 + "");
