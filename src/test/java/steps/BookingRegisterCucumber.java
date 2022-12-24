@@ -32,7 +32,7 @@ public class BookingRegisterCucumber {
         Driver.getDriver().manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
     }
 
-    @Given("I register a new user")
+    @Given("I register new user")
     public void registerUser() {
         registerPage.openPage();
         registerPage.inputEmail(ConfigProperties.property.getProperty("emailName") +
@@ -43,7 +43,7 @@ public class BookingRegisterCucumber {
         throw new cucumber.api.PendingException();
     }
 
-    @When("I confirm email address")
+    @When("I confirm email")
     public void confirmEmail() throws InterruptedException {
         emailPage.openPage();
         emailPage.loginMail(ConfigProperties.property.getProperty("emailName"));
@@ -66,7 +66,7 @@ public class BookingRegisterCucumber {
         throw new cucumber.api.PendingException();
     }
 
-    @Then("I verify that mailbox was confirmed")
+    @Then("I check my verify")
     public void doAssert() {
         personalDetailsPage.openPage();
         Assert.assertTrue("Нет иконки подтверждения email адреса", personalDetailsPage.checkVerify());
