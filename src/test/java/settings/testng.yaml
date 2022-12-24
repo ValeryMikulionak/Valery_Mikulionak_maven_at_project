@@ -1,6 +1,0 @@
-name: YAML Test suite
-parallel: classes
-tests:
-  - name: Booking tests
-    classes:
-      - tests.testng.RegisterTest
