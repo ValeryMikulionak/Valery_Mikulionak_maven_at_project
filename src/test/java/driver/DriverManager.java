@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
+import java.util.concurrent.TimeUnit;
+
 public class DriverManager {
 
         public static WebDriver getDriver(Config config) {
@@ -21,15 +23,23 @@ public class DriverManager {
         }
 
         public static WebDriver getChromeDriver() {
-            ChromeOptions caps = new ChromeOptions();
-            caps.addArguments("start-maximized");
-            return new ChromeDriver(caps);
+            ChromeOptions opt = new ChromeOptions();
+            opt.addArguments("start-maximized");
+            WebDriver driver = new ChromeDriver(opt);
+            Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            Driver.getDriver().manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+            Driver.getDriver().manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
+            return driver;
         }
 
         public static WebDriver getFirefoxDriver() {
             FirefoxOptions opt = new FirefoxOptions();
             opt.addArguments("--width=1920");
             opt.addArguments("--height=1080");
-            return new FirefoxDriver(opt);
+            WebDriver driver = new FirefoxDriver(opt);
+            Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            Driver.getDriver().manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+            Driver.getDriver().manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
+            return driver;
         }
     }
