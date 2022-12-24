@@ -1,17 +1,25 @@
-package objects;
+package pages;
 
 import driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import settings.ConfigProperties;
 
-public class VoidPOMailPage {
+import java.util.ArrayList;
+
+public class MailPage {
 
     WebDriver driver = Driver.getDriver();
 
-    public void loginMail() {
+    public void openPage(){
+        driver.get(ConfigProperties.property.getProperty("emailUrl"));
+    }
 
-        driver.findElement(By.id("login")).sendKeys();
-        driver.findElement(By.xpath("//button[@class='md']"));
+    public void loginMail(String email) {
+
+        driver.findElement(By.id("login")).clear();
+        driver.findElement(By.id("login")).sendKeys(email);
+        driver.findElement(By.xpath("//button[@class='md']")).click();
 
     }
 
@@ -34,6 +42,8 @@ public class VoidPOMailPage {
         driver.switchTo().frame(driver.findElement(By.id("ifmail")));
         driver.findElement(By.xpath("//a[contains(text(),'Confirm')]")).click();
         driver.switchTo().defaultContent();
+        ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(1));
 
     }
 }
