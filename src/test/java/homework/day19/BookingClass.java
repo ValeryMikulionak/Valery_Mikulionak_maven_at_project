@@ -64,8 +64,8 @@ public class BookingClass {
         WebElement el3 = driver.findElement(By.xpath("//div[@data-filters-item='pri:pri=5']/label/span[2]"));
         el3.click();
         driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-        new WebDriverWait(driver, 1000).until(
-                ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@data-testid='overlay-spinner']")));
+//        new WebDriverWait(driver, 1000).until(
+//                ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@data-testid='overlay-spinner']")));
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         String cost = driver.findElement
